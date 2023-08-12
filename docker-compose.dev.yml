@@ -2,12 +2,13 @@ version: '3.7'
 
 services:
   server:
-    entrypoint: [ "sh", "-c", "java -cp app:app/lib/* br.com.desafio.managementapi" ]
+    entrypoint: [ "sh", "-c", "java -cp app:app/lib/* br.com.desafio.managementapi.ManagementApiApplication" ]
     network_mode: 'host'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
-
-
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     depends_on:
       - db
 
