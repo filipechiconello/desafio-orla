@@ -32,6 +32,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<EmployeeEntity> findAllByProjectsId(Long projectId) {
+        log.info("listing employees by project id - {}", projectId);
         return employeeRepository.findAllByProjects_Id(projectId);
     }
 }
