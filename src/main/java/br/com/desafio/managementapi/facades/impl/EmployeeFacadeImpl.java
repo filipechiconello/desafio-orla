@@ -23,7 +23,7 @@ public class EmployeeFacadeImpl implements EmployeeFacade {
 
     @Override
     public List<EmployeeResponseDTO> findAllByProjects_Id(Long projectId) {
-        return mapper.toDtoList(employeeService.findAllByProjects_Id(projectId));
+        return mapper.toDtoList(employeeService.findAllByProjectsId(projectId));
     }
 
     @Override
