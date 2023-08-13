@@ -2,7 +2,9 @@ package br.com.desafio.managementapi.controllers;
 
 import br.com.desafio.managementapi.dtos.requests.ProjectRequestDTO;
 import br.com.desafio.managementapi.dtos.responses.ProjectResponseDTO;
+import br.com.desafio.managementapi.entities.EmployeeEntity;
 import br.com.desafio.managementapi.facades.ProjectFacade;
+import br.com.desafio.managementapi.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,9 @@ public class ProjectController {
     @Autowired
     private ProjectFacade projectFacade;
 
+    @Autowired
+    private ProjectService projectService;
+
     @GetMapping
     public ResponseEntity<List<ProjectResponseDTO>> findAll() {
         return new ResponseEntity<>(projectFacade.findAll(), HttpStatus.OK);
@@ -25,5 +30,10 @@ public class ProjectController {
     @PostMapping
     public ResponseEntity<ProjectResponseDTO> save(@RequestBody ProjectRequestDTO projectRequestDTO) {
         return new ResponseEntity<>(projectFacade.save(projectRequestDTO), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/employees/{projectId}")
+    public ResponseEntity<List<EmployeeEntity>> findByEmployees(@PathVariable Long projectId) {
+        return new ResponseEntity<>(projectService.findByEmployees(projectId), HttpStatus.OK);
     }
 }

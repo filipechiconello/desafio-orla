@@ -10,7 +10,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL10Dialect
-
-logging:
-  level:
-    root: INFO
+  flyway:
+    baseline: true
+    locations: src/main/resources/db/migration

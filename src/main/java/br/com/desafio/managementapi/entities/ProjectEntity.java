@@ -1,19 +1,17 @@
 package br.com.desafio.managementapi.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "projects")
+@Entity(name = "project")
 public class ProjectEntity {
 
     @Id
@@ -22,4 +20,7 @@ public class ProjectEntity {
 
     private String name;
     private LocalDateTime createdAt;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<EmployeeEntity> employees;
 }

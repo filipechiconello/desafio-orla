@@ -19,4 +19,4 @@ services:
     environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
-      - POSTGRES_DB=managementdb
+      - POSTGRES_DB=postgres
