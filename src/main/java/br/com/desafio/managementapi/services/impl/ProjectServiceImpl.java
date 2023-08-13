@@ -39,6 +39,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public ProjectEntity findById(Long id) {
+        log.info("listing projects by id - {}", id);
         return projectRepository.findById(id).orElseThrow(() -> new ProjectException(ProjectEnum.PROJECT_NOT_FOUND));
     }
 }
