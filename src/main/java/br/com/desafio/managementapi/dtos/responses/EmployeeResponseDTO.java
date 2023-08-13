@@ -4,16 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProjectResponseDTO {
+public class EmployeeResponseDTO {
 
     private Long id;
-    private String name;
-    private LocalDateTime createdAt;
-    private List<EmployeeResponseDTO> employees;
+    private int document;
+    private String email;
+    private BigDecimal salary;
+    private List<ProjectResponseDTO> projects;
 }

@@ -7,10 +7,12 @@ import br.com.desafio.managementapi.mappers.ProjectMapper;
 import br.com.desafio.managementapi.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Component
+@Transactional()
 public class ProjectFacadeImpl implements ProjectFacade {
 
     @Autowired
