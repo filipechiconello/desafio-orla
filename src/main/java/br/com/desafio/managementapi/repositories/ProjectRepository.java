@@ -11,8 +11,6 @@ import java.util.List;
 @Repository
 public interface ProjectRepository extends JpaRepository<ProjectEntity, Long> {
 
-//    @Query("SELECT e FROM employee e JOIN e.projects p WHERE p.id = :projectId")
-//    List<EmployeeEntity> findByEmployees(Long projectId);
-
-    List<EmployeeEntity> findByEmployeesContains(Long projectId);
+    @Query("SELECT e FROM project p JOIN p.employees e WHERE p.id = :projectId")
+    List<EmployeeEntity> findEmployeesByProjectId(Long projectId);
 }

@@ -32,8 +32,8 @@ public class ProjectController {
         return new ResponseEntity<>(projectFacade.save(projectRequestDTO), HttpStatus.CREATED);
     }
 
-    @GetMapping("/employees/{projectId}")
-    public ResponseEntity<List<EmployeeEntity>> findByEmployees(@PathVariable Long projectId) {
+    @GetMapping("/{projectId}")
+    public ResponseEntity<List<EmployeeEntity>> findByEmployeesByProjectId(@PathVariable Long projectId) {
         return new ResponseEntity<>(projectService.findByEmployees(projectId), HttpStatus.OK);
     }
 }
