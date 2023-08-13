@@ -41,5 +41,5 @@ http://localhost:8080/healthcheck
 * [Flyway Migration](https://aws.amazon.com/pt/ses/) - O Flyway é uma ferramenta de migração de banco de dados de código aberto, projetada para facilitar o gerenciamento e a evolução do esquema do banco de dados ao longo do tempo. Ele é frequentemente usado em projetos que usam sistemas de gerenciamento de banco de dados relacionais, como PostgreSQL, MySQL, Oracle, SQL Server, entre outros.
 * [Bean Validation](https://aws.amazon.com/pt/ses/) - O Bean Validation é uma especificação do Java que fornece um conjunto de anotações e APIs para validar dados em objetos Java, especialmente em objetos que representam entidades, DTOs (Objetos de Transferência de Dados) e outros componentes dentro de uma aplicação.
 
-## Architecture
+## Arquitetura
 ![Diagrama](documentations/managementapi.png)
