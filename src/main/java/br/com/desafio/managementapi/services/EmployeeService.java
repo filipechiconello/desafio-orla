@@ -10,5 +10,5 @@ public interface EmployeeService {
 
     EmployeeEntity findById(Long id);
 
-    List<EmployeeEntity> findAllByProjects_Id(Long projectId);
+    List<EmployeeEntity> findAllByProjectsId(Long projectId);
 }
