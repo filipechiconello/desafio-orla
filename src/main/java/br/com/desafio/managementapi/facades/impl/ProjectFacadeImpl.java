@@ -1,8 +1,10 @@
 package br.com.desafio.managementapi.facades.impl;
 
 import br.com.desafio.managementapi.dtos.requests.ProjectRequestDTO;
+import br.com.desafio.managementapi.dtos.responses.EmployeeResponseDTO;
 import br.com.desafio.managementapi.dtos.responses.ProjectResponseDTO;
 import br.com.desafio.managementapi.facades.ProjectFacade;
+import br.com.desafio.managementapi.mappers.EmployeeMapper;
 import br.com.desafio.managementapi.mappers.ProjectMapper;
 import br.com.desafio.managementapi.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,9 @@ public class ProjectFacadeImpl implements ProjectFacade {
     @Autowired
     private ProjectMapper mapper;
 
+    @Autowired
+    private EmployeeMapper employeeMapper;
+
     @Override
     public ProjectResponseDTO save(ProjectRequestDTO projectRequestDTO) {
         return mapper.toDto(projectService.save(mapper.toEntity(projectRequestDTO)));
@@ -29,5 +34,10 @@ public class ProjectFacadeImpl implements ProjectFacade {
     @Override
     public List<ProjectResponseDTO> findAll() {
         return mapper.toDtoList(projectService.findAll());
+    }
+
+    @Override
+    public List<EmployeeResponseDTO> findByEmployees(Long projectId) {
+        return employeeMapper.toDtoList(projectService.findByEmployees(projectId));
     }
 }

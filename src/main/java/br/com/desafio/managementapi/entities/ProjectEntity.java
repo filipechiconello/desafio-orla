@@ -1,11 +1,11 @@
 package br.com.desafio.managementapi.entities;
 
-import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -19,7 +19,7 @@ public class ProjectEntity {
     private Long id;
 
     private String name;
-    private LocalDateTime createdAt;
+    private LocalDate createdAt;
 
     @OneToMany(fetch = FetchType.EAGER)
     private List<EmployeeEntity> employees;
