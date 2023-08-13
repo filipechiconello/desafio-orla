@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -28,7 +29,7 @@ public class ProjectController {
     }
 
     @PostMapping
-    public ResponseEntity<ProjectResponseDTO> save(@RequestBody ProjectRequestDTO projectRequestDTO) {
+    public ResponseEntity<ProjectResponseDTO> save(@Valid @RequestBody ProjectRequestDTO projectRequestDTO) {
         return new ResponseEntity<>(projectFacade.save(projectRequestDTO), HttpStatus.CREATED);
     }
 

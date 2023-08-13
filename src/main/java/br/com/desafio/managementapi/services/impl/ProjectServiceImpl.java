@@ -2,6 +2,8 @@ package br.com.desafio.managementapi.services.impl;
 
 import br.com.desafio.managementapi.entities.EmployeeEntity;
 import br.com.desafio.managementapi.entities.ProjectEntity;
+import br.com.desafio.managementapi.exceptions.ProjectException;
+import br.com.desafio.managementapi.exceptions.enums.ProjectEnum;
 import br.com.desafio.managementapi.repositories.ProjectRepository;
 import br.com.desafio.managementapi.services.ProjectService;
 import lombok.extern.slf4j.Slf4j;
@@ -37,6 +39,6 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public ProjectEntity findById(Long id) {
-        return projectRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("erro"));
+        return projectRepository.findById(id).orElseThrow(() -> new ProjectException(ProjectEnum.PROJECT_NOT_FOUND));
     }
 }

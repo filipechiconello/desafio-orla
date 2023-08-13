@@ -1,6 +1,8 @@
 package br.com.desafio.managementapi.services.impl;
 
 import br.com.desafio.managementapi.entities.EmployeeEntity;
+import br.com.desafio.managementapi.exceptions.EmployeeException;
+import br.com.desafio.managementapi.exceptions.enums.EmployeeEnum;
 import br.com.desafio.managementapi.repositories.EmployeeRepository;
 import br.com.desafio.managementapi.services.EmployeeService;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +27,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public EmployeeEntity findById(Long id) {
         log.info("listing employee by id - {}", id);
-        return employeeRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("not found"));
+        return employeeRepository.findById(id).orElseThrow(() -> new EmployeeException(EmployeeEnum.EMPLOYEE_NOT_FOUND));
     }
 
     @Override

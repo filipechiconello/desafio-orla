@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -13,6 +15,8 @@ import java.util.List;
 @NoArgsConstructor
 public class ProjectRequestDTO {
 
+    @NotNull(message = "{not.null}")
+    @NotEmpty(message = "{not.empty}")
     private String name;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")

@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -18,12 +19,12 @@ public class EmployeeController {
     private EmployeeFacade employeeFacade;
 
     @PostMapping
-    public ResponseEntity<EmployeeResponseDTO> save(@RequestBody EmployeeRequestDTO employeeRequestDTO) {
+    public ResponseEntity<EmployeeResponseDTO> save(@Valid @RequestBody EmployeeRequestDTO employeeRequestDTO) {
         return new ResponseEntity<>(employeeFacade.save(employeeRequestDTO), HttpStatus.OK);
     }
 
     @GetMapping("/{projectId}")
-    public ResponseEntity<List<EmployeeResponseDTO>> get(@PathVariable Long projectId) {
+    public ResponseEntity<List<EmployeeResponseDTO>> findAllByProjectsIds(@PathVariable Long projectId) {
         return new ResponseEntity<>(employeeFacade.findAllByProjects_Id(projectId), HttpStatus.OK);
     }
 }
