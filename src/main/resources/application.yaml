@@ -13,3 +13,25 @@ spring:
   flyway:
     baseline: true
     locations: src/main/resources/db/migration
+
+
+swagger:
+  contact:
+    name: 'Filipe Chiconello'
+    email: "filipe360@gmail.com"
+  app:
+    name: Management API
+    version: 0.1.0
+    description: API responsible for registering and querying projects and employees.
+  base:
+    package: br.com.desafio.managementapi.controllers
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path:
+      path-mapping:
+        health: /healthcheck
