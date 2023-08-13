@@ -3,6 +3,7 @@ package br.com.desafio.managementapi.mappers;
 import br.com.desafio.managementapi.dtos.requests.EmployeeRequestDTO;
 import br.com.desafio.managementapi.dtos.responses.EmployeeResponseDTO;
 import br.com.desafio.managementapi.entities.EmployeeEntity;
+import br.com.desafio.managementapi.entities.ProjectEntity;
 import br.com.desafio.managementapi.services.ProjectService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +27,16 @@ public class EmployeeMapper {
     private ProjectService projectService;
 
     public EmployeeEntity toEntity(EmployeeRequestDTO request) {
-        return mapper.map(request, EmployeeEntity.class);
+        List<ProjectEntity> list = new ArrayList<>();
+        EmployeeEntity employeeEntity = mapper.map(request, EmployeeEntity.class);
+
+        request.getProjectIds().forEach(projectId -> {
+            list.add(projectService.findById(projectId));
+        });
+
+        employeeEntity.setProjects(list);
+
+        return employeeEntity;
     }
 
     public EmployeeResponseDTO toDto(EmployeeEntity entity) {
