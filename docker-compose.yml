@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  server:
+    build: .
+    container_name: management-api
+    volumes:
+      - ./tmp:/app/tmp
+      - ./log:/app/log
