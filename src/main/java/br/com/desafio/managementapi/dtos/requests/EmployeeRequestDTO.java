@@ -14,7 +14,7 @@ import java.util.List;
 public class EmployeeRequestDTO {
 
     @Size(min = 11, max = 11, message = "{document.validation}")
-    private int document;
+    private String document;
 
     @Email(message = "{email.validation}")
     @NotEmpty(message = "{not.empty}")

@@ -19,7 +19,8 @@ public class ProjectRequestDTO {
     @NotEmpty(message = "{not.empty}")
     private String name;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    @NotNull(message = "{not.null}")
+    @NotEmpty(message = "{not.empty}")
     private LocalDateTime createdAt;
 
     private List<Long> employeeIds;

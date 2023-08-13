@@ -13,7 +13,7 @@ import java.util.List;
 public class EmployeeResponseDTO {
 
     private Long id;
-    private int document;
+    private String document;
     private String email;
     private BigDecimal salary;
     private List<ProjectResponseDTO> projects;

@@ -32,6 +32,7 @@ public class ProjectMapper {
         request.getEmployeeIds().forEach(employeeId -> {
             employeeEntityList.add(employeeService.findById(employeeId));
         });
+        project.setCreatedAt(request.getCreatedAt());
         project.setEmployees(employeeEntityList);
 
         return project;

@@ -6,7 +6,7 @@ O que você precisa instalar para rodar o projeto?
 
 * [Gradle](https://gradle.org/)
 * [JDK-17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-* [Postres DB](https://www.postgresql.org/)
+* [Postgres DB](https://www.postgresql.org/)
 * [Docker](https://www.docker.com/)
 
 ### Como rodar a aplicação?
@@ -40,3 +40,6 @@ http://localhost:8080/healthcheck
 * [Power Mock](https://powermock.github.io/) - O PowerMock é uma estrutura que estende outras bibliotecas simuladas, como o EasyMock, com recursos mais poderosos. O PowerMock usa um carregador de classes personalizado e manipulação de bytecode para permitir a simulação de métodos estáticos, construtores, classes e métodos finais, métodos particulares, remoção de inicializadores estáticos e muito mais.
 * [Flyway Migration](https://aws.amazon.com/pt/ses/) - O Flyway é uma ferramenta de migração de banco de dados de código aberto, projetada para facilitar o gerenciamento e a evolução do esquema do banco de dados ao longo do tempo. Ele é frequentemente usado em projetos que usam sistemas de gerenciamento de banco de dados relacionais, como PostgreSQL, MySQL, Oracle, SQL Server, entre outros.
 * [Bean Validation](https://aws.amazon.com/pt/ses/) - O Bean Validation é uma especificação do Java que fornece um conjunto de anotações e APIs para validar dados em objetos Java, especialmente em objetos que representam entidades, DTOs (Objetos de Transferência de Dados) e outros componentes dentro de uma aplicação.
+
+## Architecture
+![Diagrama](documentations/managementapi.png)

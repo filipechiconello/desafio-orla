@@ -18,7 +18,7 @@ public class EmployeeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int document;
+    private String document;
     private String email;
     private BigDecimal salary;
 
